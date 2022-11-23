@@ -1,16 +1,15 @@
-public class Sociedades implements Clientes{
+public class Sociedades implements Clientes {
 
-        private String id;
-        private String age;
+    private String id;
+    private String age;
 
-    public void setId(String id){
-        this.id=id;
-
+    public void setId(String id) {
+        this.id = id;
+    }
     @Override
     public String getId() {
         return id;
     }
-
 
     @Override
     public String getDni() {

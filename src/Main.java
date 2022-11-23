@@ -1,5 +1,10 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+
+        Printer animalPrinter = new Printer();
+        Sociedades sociedad = new Sociedades();
+        sociedad.setId("Perro1");
+        dog.setAge(5);
+        animalPrinter.printAnimal(dog);
     }
 }

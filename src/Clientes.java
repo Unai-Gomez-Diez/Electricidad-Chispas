@@ -1,7 +1,9 @@
 public interface Clientes {
-    public String getId();
+    public Integer getId();
+    public String getName();
     public String getDni();
-    public String getDireccionPostal();
+
+    public String getDireccion_postal();
     public String getPoblacion();
     public String getProvincia();
     public String getEmail();

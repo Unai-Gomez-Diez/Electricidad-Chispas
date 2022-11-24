@@ -14,19 +14,19 @@ public class Autonomos implements Clientes {
     }
     @Override
     public Integer getId() {
-        return null;
+        return this.id;
     }
     public void setName(String name) {
         this.name = name;
     }
     @Override
     public String getName() {
-        return null;
+        return name;
     }
     public void setCode(String code) {
         this.code = code;
     }
-    @Override
+
     public String getCode() {
         return null;
     }

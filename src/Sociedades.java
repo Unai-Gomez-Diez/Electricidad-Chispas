@@ -36,7 +36,7 @@ public class Sociedades implements Clientes {
     public void setCode(String code) {
         this.code = code;
     }
-    @Override
+
     public String getCode() {
         return code;
     }

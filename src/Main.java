@@ -171,7 +171,7 @@ public class Main {
 
         //Set factura sociedad
         System.out.println("Rellena los datos de la factura para una sociedad...");
-        Facturas factura2 = new Facturas();
+        Factura factura2 = new Factura();
         factura2.setId(2);
         System.out.println("Fecha:");
         factura2.setFecha(entrada.next());
@@ -187,9 +187,9 @@ public class Main {
         System.out.println("FACTURA-" + factura1.getId());
         System.out.println("FECHA: " + factura1.getFecha());
         System.out.println("CLIENTE:");
-        System.out.println("cif/nif: " + factura1.getCliente().getCode());
+        System.out.println("cif/nif: " + factura1.getCliente().getNumidentidad());
         System.out.println("nombre: " + factura1.getCliente().getName());
-        System.out.println("direccion: " + factura1.getCliente().getDireccionPostal());
+        System.out.println("direccion: " + factura1.getCliente().getDireccion_postal());
         System.out.println("poblacion: " + factura1.getCliente().getPoblacion());
         System.out.println("provincia: " + factura1.getCliente().getProvincia());
         System.out.println("email: " + factura1.getCliente().getEmail());

@@ -162,8 +162,8 @@ public class Main {
         System.out.println("Fecha:");
         factura1.setFecha(entrada.next());
         factura1.setCliente(autonomo);
-        factura1.setVenta(producto1);
-        factura1.setVenta(servicio1);
+        factura1.setVender(producto1);
+        factura1.setVender(servicio1);
         System.out.println("Base Imponible:");
         factura1.setBaseImponible(entrada.nextInt());
         System.out.println("Total:");
@@ -176,8 +176,8 @@ public class Main {
         System.out.println("Fecha:");
         factura2.setFecha(entrada.next());
         factura2.setCliente(sociedad);
-        factura2.setVenta(producto2);
-        factura2.setVenta(servicio2);
+        factura2.setVender(producto2);
+        factura2.setVender(servicio2);
         System.out.println("Base Imponible:");
         factura2.setBaseImponible(entrada.nextInt());
         System.out.println("Total:");
@@ -194,17 +194,17 @@ public class Main {
         System.out.println("provincia: " + factura1.getCliente().getProvincia());
         System.out.println("email: " + factura1.getCliente().getEmail());
         System.out.println("VENTA:");
-        System.out.println("codigo: " + factura1.getVenta().getId());
-        System.out.println("nombre: " + factura1.getVenta().getName());
-        System.out.println("precio: " + factura1.getVenta().getPrecio());
-        System.out.println("tipo IVA: " + factura1.getVenta().getIva());
+        System.out.println("codigo: " + factura1.getVender().getId());
+        System.out.println("nombre: " + factura1.getVender().getName());
+        System.out.println("precio: " + factura1.getVender().getPrecio());
+        System.out.println("tipo IVA: " + factura1.getVender().getIva());
         System.out.println("--------------");
-        System.out.println("codigo: " + factura1.getVenta().getId());
-        System.out.println("nombre: " + factura1.getVenta().getName());
-        System.out.println("precio: " + factura1.getVenta().getPrecio());
-        System.out.println("tipo IVA: " + factura1.getVenta().getIva());
+        System.out.println("codigo: " + factura1.getVender().getId());
+        System.out.println("nombre: " + factura1.getVender().getName());
+        System.out.println("precio: " + factura1.getVender().getPrecio());
+        System.out.println("tipo IVA: " + factura1.getVender().getIva());
         System.out.println("TOTAL:");
-        System.out.println("Total: " + (factura1.getVenta().getPrecio())+factura1.getVenta().getPrecio());
+        System.out.println("Total: " + (factura1.getVender().getPrecio())+factura1.getVender().getPrecio());
         System.out.println("-------------------");
     }
 }

@@ -1,7 +1,9 @@
 public class Autonomo implements Clientes {
     private Integer id;
     private String name;
-    private String code;
+
+    private String surname;
+    private String numidentidad;
     private String direccion_postal;
     private String poblacion;
     private String provincia;
@@ -23,16 +25,25 @@ public class Autonomo implements Clientes {
     public String getName() {
         return name;
     }
-    public void setCode(String code) {
-        this.code = code;
+    public String getSurname(){
+        return surname;
     }
 
-    public String getCode() {
-        return this.code;
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
+    public void setNumidentidad(String numidentidad) {
+        this.numidentidad = numidentidad;
+    }
+    @Override
+    public String getNumidentidad() {
+        return this.numidentidad;
+    }
+
     public void setDireccion_postal(String direccion_postal) {
         this.direccion_postal = direccion_postal;
     }
+
     @Override
     public String getDireccion_postal() {
         return direccion_postal;

@@ -2,8 +2,8 @@ public class Sociedad implements Clientes {
 
     private Integer id;
     private String name;
-    private String surname;
-    private String cif;
+
+    private String numidentidad;
     private String direccion_postal;
     private String poblacion;
     private String provincia;
@@ -19,13 +19,7 @@ public class Sociedad implements Clientes {
     }
 
 
-    public String getSurname(){
-        return surname;
-    }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
     public void setName(String name) {
         this.name = name;
     }
@@ -33,12 +27,12 @@ public class Sociedad implements Clientes {
     public String getName() {
         return name;
     }
-    public void setCif(String cif) {
-        this.cif = cif;
+    public void setNumidentidad(String numidentidad) {
+        this.numidentidad = numidentidad;
     }
 
-    public String getCif() {
-        return cif;
+    public String getNumidentidad() {
+        return numidentidad;
     }
     public void setDireccion_postal(String direccion_postal) {
         this.direccion_postal = direccion_postal;

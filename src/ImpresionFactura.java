@@ -15,13 +15,13 @@ public class ImpresionFacturas {
         System.out.println("nombre: " + factura1.getVender().getName());
         System.out.println("precio: " + factura1.getVender().getPrecio());
         System.out.println("tipo IVA: " + factura1.getVender().getIva());
-        System.out.println("Total: " + (factura1.getVender().getPrecio()*(1+factura1.getVender().getId().getIva)));
+        System.out.println("Total: " + (factura1.getVender().getPrecio()*(1+factura1.getVender().getIva())));
         System.out.println("--------------");
         System.out.println("codigo: " + factura1.getVender().getId());
         System.out.println("nombre: " + factura1.getVender().getName());
         System.out.println("precio: " + factura1.getVender().getPrecio());
         System.out.println("tipo IVA: " + factura1.getVender().getIva());
-        System.out.println("Total: " + (factura1.getVender().getPrecio()*(1+factura1.getVender().getId().getIva())));
+        System.out.println("Total: " + (factura1.getVender().getPrecio()*(1+factura1.getVender().getIva())));
         System.out.println("TOTAL:");
         System.out.println("Total: " + (factura1.getVender().getPrecio()+factura1.getVender().getPrecio()));
         System.out.println("-------------------");

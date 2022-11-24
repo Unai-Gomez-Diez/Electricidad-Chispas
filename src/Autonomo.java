@@ -1,8 +1,6 @@
-public class Sociedades implements Clientes {
-
+public class Autonomo implements Clientes {
     private Integer id;
     private String name;
-    private String surname;
     private String code;
     private String direccion_postal;
     private String poblacion;
@@ -10,21 +8,13 @@ public class Sociedades implements Clientes {
     private String email;
     private String telefono;
 
+
     public void setId(Integer id) {
         this.id = id;
     }
     @Override
     public Integer getId() {
-        return id;
-    }
-
-
-    public String getSurname(){
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
+        return this.id;
     }
     public void setName(String name) {
         this.name = name;
@@ -38,7 +28,7 @@ public class Sociedades implements Clientes {
     }
 
     public String getCode() {
-        return code;
+        return this.code;
     }
     public void setDireccion_postal(String direccion_postal) {
         this.direccion_postal = direccion_postal;

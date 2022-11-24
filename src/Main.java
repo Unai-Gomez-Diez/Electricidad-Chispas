@@ -157,7 +157,7 @@ public class Main {
 
         //Set factura autonomo
         System.out.println("Rellena los datos de la factura para un autonomo...");
-        Facturas factura1 = new Facturas();
+        Factura factura1 = new Factura();
         factura1.setId(1);
         System.out.println("Fecha:");
         factura1.setFecha(entrada.next());

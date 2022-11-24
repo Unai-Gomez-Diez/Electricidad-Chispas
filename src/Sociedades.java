@@ -3,7 +3,7 @@ public class Sociedades implements Clientes {
     private Integer id;
     private String name;
     private String surname;
-    private String dni;
+    private String code;
     private String direccion_postal;
     private String poblacion;
     private String provincia;
@@ -17,9 +17,8 @@ public class Sociedades implements Clientes {
     public Integer getId() {
         return id;
     }
-    public void setName(String name) {
-        this.name = name;
-    }
+
+
     public String getSurname(){
         return surname;
     }
@@ -27,16 +26,19 @@ public class Sociedades implements Clientes {
     public void setSurname(String surname) {
         this.surname = surname;
     }
+    public void setName(String name) {
+        this.name = name;
+    }
     @Override
     public String getName() {
         return name;
     }
-    public void setDni(String dni) {
-        this.dni = dni;
+    public void setCode(String code) {
+        this.code = code;
     }
     @Override
-    public String getDni() {
-        return dni;
+    public String getCode() {
+        return code;
     }
     public void setDireccion_postal(String direccion_postal) {
         this.direccion_postal = direccion_postal;

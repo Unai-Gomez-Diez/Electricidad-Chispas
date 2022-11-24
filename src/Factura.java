@@ -2,7 +2,7 @@ public class Factura {
     private Integer id;
     private String fecha;
     private Clientes cliente;
-    private Vender venta;
+    private Vender vender;
     private Integer baseImponible;
     private Integer total;
 
@@ -30,12 +30,12 @@ public class Factura {
         this.cliente = cliente;
     }
 
-    public Venta getVenta() {
-        return venta;
+    public Vender getVender() {
+        return vender;
     }
 
-    public void setVenta(Servicio venta) {
-        this.venta = venta;
+    public void setVender(Vender vender) {
+        this.vender = vender;
     }
 
     public Integer getBaseImponible() {
@@ -54,4 +54,4 @@ public class Factura {
         this.total = total;
     }
 }
-}
+

@@ -102,8 +102,8 @@ public class Main {
         factura1.setId(1);
         factura1.setFecha("20/2/22");
         factura1.setCliente(autonomo);
-        factura1.setVender(producto1);
-        factura1.setVender(servicio1);
+        factura1.setProducto(producto1);
+        factura1.setServicio(servicio1);
         factura1.setBaseImponible(producto1.getPrecio() + servicio1.getPrecio());
         factura1.setTotal((int) (producto1.getPrecio()*1.21 + servicio1.getPrecio()*1.21));
 
@@ -111,15 +111,15 @@ public class Main {
         factura2.setId(2);
         factura2.setFecha("20/2/22");
         factura2.setCliente(sociedad);
-        factura2.setVender(producto2);
-        factura2.setVender(servicio2);
+        factura2.setProducto(producto2);
+        factura2.setServicio(servicio2);
         factura2.setBaseImponible(producto2.getPrecio() + servicio2.getPrecio());
         factura2.setTotal((int) (producto2.getPrecio()*1.21 + servicio2.getPrecio()*1.21));
 
 
 
-        ImpresionFacturas.print(factura1);
+        ImpresionFacturas.print1(factura1);
 
-        ImpresionFacturas.print(factura2);
+        ImpresionFacturas.print2(factura2);
     }
 }

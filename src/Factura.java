@@ -2,7 +2,8 @@ public class Factura {
     private Integer id;
     private String fecha;
     private Clientes cliente;
-    private Vender vender;
+    private Producto producto;
+    private Servicio servicio;
     private Integer baseImponible;
     private Integer total;
 
@@ -30,12 +31,20 @@ public class Factura {
         this.cliente = cliente;
     }
 
-    public Vender getVender() {
-        return vender;
+    public Servicio getServicio() {
+        return servicio;
     }
 
-    public void setVender(Vender vender) {
-        this.vender = vender;
+    public void setServicio(Servicio servicio) {
+        this.servicio = servicio;
+    }
+
+    public Producto getProducto() {
+        return producto;
+    }
+
+    public void setProducto(Producto producto) {
+        this.producto = producto;
     }
 
     public Integer getBaseImponible() {

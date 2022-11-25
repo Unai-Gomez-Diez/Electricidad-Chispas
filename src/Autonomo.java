@@ -23,7 +23,7 @@ public class Autonomo implements Clientes {
     }
     @Override
     public String getName() {
-        return name;
+        return this.name+" "+surname;
     }
     public String getSurname(){
         return surname;

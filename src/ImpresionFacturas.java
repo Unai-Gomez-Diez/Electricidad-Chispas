@@ -1,10 +1,10 @@
 public class ImpresionFacturas {
-    public void print(Factura factura1) {
+    public static void print(Factura factura1) {
         System.out.println("-------------------");
         System.out.println("FACTURA-" + factura1.getId());
-        System.out.println("FECHA: " + factura1.getFecha());
+        System.out.print(" | " + factura1.getFecha());
         System.out.println("CLIENTE:");
-        System.out.println("cif/nif: " + factura1.getCliente().getNumidentidad());
+        System.out.print("cif/nif: " + factura1.getCliente().getNumidentidad());
         System.out.println("nombre: " + factura1.getCliente().getName());
         System.out.println("direccion: " + factura1.getCliente().getDireccion_postal());
         System.out.println("poblacion: " + factura1.getCliente().getPoblacion());

@@ -1,3 +1,5 @@
+package com.iesam.chispas.domain.models;
+
 public class Autonomo implements Clientes {
     private Integer id;
     private String name;
@@ -15,7 +17,7 @@ public class Autonomo implements Clientes {
         this.id = id;
     }
     @Override
-    public Integer getId() {
+    public String getId() {
         return this.id;
     }
     public void setName(String name) {

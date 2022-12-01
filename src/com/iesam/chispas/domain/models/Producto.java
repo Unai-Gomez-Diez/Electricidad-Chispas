@@ -1,6 +1,6 @@
-import com.sun.xml.internal.ws.api.ha.StickyFeature;
+package com.iesam.chispas.domain.models;
 
-public class Producto implements Vender{
+public class Producto implements Vender {
     private Integer id;
     private String name;
     private String marca;

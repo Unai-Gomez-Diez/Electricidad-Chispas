@@ -1,3 +1,13 @@
+package com.iesam.chispas.domain.models;
+
+import com.iesam.chispas.data.CustomerDataStore;
+import com.iesam.chispas.data.MemCustomerDataStore;
+import com.iesam.chispas.domain.usecase.AddCustomerUseCase;
+import com.iesam.chispas.domain.usecase.DeleteCustomerUseCase;
+import com.iesam.chispas.domain.usecase.GetCustomerUseCase;
+import com.iesam.chispas.domain.usecase.UpdateCustomerUseCase;
+
+import java.util.List;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
@@ -61,19 +71,45 @@ public class Main {
         producto2.setPrecio(1000);
         producto2.setIva(21);
 
-        System.out.println("Producto-" + producto1.getId());
+        System.out.println("com.iesam.chispas.domain.models.Producto-" + producto1.getId());
         System.out.println("NOMBRE-" + producto1.getName());
         System.out.println("MARCA-" + producto1.getMarca());
         System.out.println("MODELO-" + producto1.getModel());
         System.out.println("PRECIO-" + producto1.getPrecio());
         System.out.println("TIPO IVA-" + producto1.getIva());
         System.out.println("-------------------");
-        System.out.println("Producto-" + producto2.getId());
+        System.out.println("com.iesam.chispas.domain.models.Producto-" + producto2.getId());
         System.out.println("NOMBRE-" + producto2.getName());
         System.out.println("MARCA-" + producto2.getMarca());
         System.out.println("MODELO-" + producto2.getModel());
         System.out.println("PRECIO-" + producto2.getPrecio());
         System.out.println("TIPO IVA-" + producto2.getIva());
+
+        CustomerDataStore customerDataStore= new MemCustomerDataStore();
+
+        AddCustomerUseCase addCustomerUseCase = new AddCustomerUseCase(customerDataStore);
+        addCustomerUseCase.execute(autonomo);
+        addCustomerUseCase.execute(sociedad);
+
+        GetCustomerUseCase getCustomerUseCase = new GetCustomerUseCase(customerDataStore);
+        List<Clientes> customers = getCustomerUseCase.execute();
+
+        for (int i = 0; i < customers.size(); i++){
+            printClientes(customers.get(i));
+        }
+
+        DeleteCustomerUseCase deleteCustomerUseCase = new DeleteCustomerUseCase(customerDataStore);
+        deleteCustomerUseCase.execute(sociedad);
+        for (int i = 0; i < customers.size(); i++){
+            printCliente(customers.get(i));
+        }
+
+        UpdateCustomerUseCase updateCustomerUseCase = new UpdateCustomerUseCase(customerDataStore);
+        updateCustomerUseCase.execute(sociedad);
+        for (int i = 0; i < customers.size(); i++){
+            printCliente(customers.get(i));
+        }
+
 
 
         Servicio servicio1 = new Servicio();
@@ -88,11 +124,11 @@ public class Main {
         servicio2.setPrecio(25);
         servicio2.setIva(21);
 
-        System.out.println("Servicio-" + servicio1.getId());
+        System.out.println("com.iesam.chispas.domain.models.Servicio-" + servicio1.getId());
         System.out.println("NOMBRE-" + servicio1.getName());
         System.out.println("PRECIO-" + servicio1.getPrecio());
         System.out.println("TIPO IVA-" + servicio1.getIva());
-        System.out.println("Servicio-" + servicio2.getId());
+        System.out.println("com.iesam.chispas.domain.models.Servicio-" + servicio2.getId());
         System.out.println("NOMBRE-" + servicio2.getName());
         System.out.println("PRECIO-" + servicio2.getPrecio());
         System.out.println("TIPO IVA-" + servicio2.getIva());

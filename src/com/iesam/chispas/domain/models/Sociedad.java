@@ -1,3 +1,5 @@
+package com.iesam.chispas.domain.models;
+
 public class Sociedad implements Clientes {
 
     private Integer id;
@@ -14,7 +16,7 @@ public class Sociedad implements Clientes {
         this.id = id;
     }
     @Override
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 

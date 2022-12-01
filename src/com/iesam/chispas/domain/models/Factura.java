@@ -1,3 +1,5 @@
+package com.iesam.chispas.domain.models;
+
 public class Factura {
     private Integer id;
     private String fecha;

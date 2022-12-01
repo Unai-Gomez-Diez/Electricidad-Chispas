@@ -1,3 +1,5 @@
+package com.iesam.chispas.domain.models;
+
 public class ImpresionFacturas {
     public static void print1(Factura factura1) {
         System.out.println(" ");

@@ -1,5 +1,7 @@
+package com.iesam.chispas.domain.models;
+
 public interface Clientes {
-    public Integer getId();
+    public String getId();
     public String getName();
 public String getNumidentidad();
     public String getDireccion_postal();

@@ -1,4 +1,6 @@
-public class Servicio implements Vender{
+package com.iesam.chispas.domain.models;
+
+public class Servicio implements Vender {
 
     private Integer id;
     private String name;

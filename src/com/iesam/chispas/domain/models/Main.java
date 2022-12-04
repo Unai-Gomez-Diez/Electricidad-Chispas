@@ -1,11 +1,10 @@
 package com.iesam.chispas.domain.models;
 
 import com.iesam.chispas.data.CustomerDataStore;
+import com.iesam.chispas.data.ItemDataStore;
 import com.iesam.chispas.data.MemCustomerDataStore;
-import com.iesam.chispas.domain.usecase.AddCustomerUseCase;
-import com.iesam.chispas.domain.usecase.DeleteCustomerUseCase;
-import com.iesam.chispas.domain.usecase.GetCustomerUseCase;
-import com.iesam.chispas.domain.usecase.UpdateCustomerUseCase;
+import com.iesam.chispas.data.MemItemDataStore;
+import com.iesam.chispas.domain.usecase.*;
 
 import java.util.List;
 import java.util.Scanner;
@@ -110,6 +109,10 @@ public class Main {
         for (int i = 0; i < customers.size(); i++){
             printCliente(customers.get(i));
         }
+/*
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ */
+
 
 
 
@@ -134,7 +137,30 @@ public class Main {
         System.out.println("PRECIO-" + servicio2.getPrecio());
         System.out.println("TIPO IVA-" + servicio2.getIva());
 
+        ItemDataStore itemDataStore= new MemItemDataStore();
 
+        AddItemUseCase addItemUseCase = new AddItemUseCase(itemDataStore);
+        addItemUseCase.execute(producto1);
+        addItemUseCase.execute(servicio1);
+
+        GetItemUseCase getItemUseCase = new GetItemUseCase(itemDataStore);
+        List<Vender> item = getItemUseCase.execute();
+
+        for (int i = 0; i < item.size(); i++){
+            printVender(item.get(i));
+        }
+
+        DeleteItemUseCase deleteItemUseCase = new DeleteItemUseCase(itemDataStore);
+        deleteItemUseCase.execute(producto1);
+        for (int i = 0; i < item.size(); i++){
+            printVender(item.get(i));
+        }
+
+        UpdateItemUseCase updateItemUseCase = new UpdateItemUseCase(itemDataStore);
+        updateItemUseCase.execute(servicio1);
+        for (int i = 0; i < item.size(); i++){
+            printVender(item.get(i));
+        }
 
 
         Factura factura1 = new Factura();
@@ -169,5 +195,8 @@ public class Main {
 
     private static void printCliente(Clientes clientes) {
         System.out.println("Cod: " + clientes.getId() + " Nombre: " + clientes.getName() + " Email: " + clientes.getEmail());
+    }
+    private static void printVender(Vender vender) {
+        System.out.println("Cod: " + vender.getId() + " Nombre: " + vender.getName() + " Email: " + vender.getIva());
     }
 }

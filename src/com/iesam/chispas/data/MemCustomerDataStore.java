@@ -32,7 +32,7 @@ public class MemCustomerDataStore implements CustomerDataStore{
     }
 
     @Override
-    public Clientes findById(Integer codCliente) {
-        return dataStore.get(codCliente);
+    public Clientes findById(Integer id) {
+        return dataStore.get(id);
     }
 }

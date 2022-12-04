@@ -14,5 +14,5 @@ public interface CustomerDataStore {
 
     List<Clientes> getAllCustomers();
 
-    Clientes findById(Integer codCliente);
+    Clientes findById(Integer id);
 }

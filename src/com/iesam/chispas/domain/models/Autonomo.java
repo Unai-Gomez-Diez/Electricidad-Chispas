@@ -17,7 +17,7 @@ public class Autonomo implements Clientes {
         this.id = id;
     }
     @Override
-    public String getId() {
+    public Integer getId() {
         return this.id;
     }
     public void setName(String name) {

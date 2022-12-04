@@ -9,21 +9,21 @@ import java.util.TreeMap;
 
 public class MemCustomerDataStore implements CustomerDataStore{
 
-    private Map<String, Clientes> dataStore = new TreeMap<String, Clientes>();
+    private Map<Integer, Clientes> dataStore = new TreeMap<>();
 
     @Override
-    public void saveCustomer(Clientes cliente) {
-        dataStore.put(cliente.getId(), cliente);
+    public void saveCustomer(Clientes clientes) {
+        dataStore.put(clientes.getId(), clientes);
     }
 
     @Override
-    public void deleteCustomer(Clientes cliente) {
-        dataStore.remove(cliente);
+    public void deleteCustomer(Clientes clientes) {
+        dataStore.remove(clientes);
     }
 
     @Override
-    public void updateCustomer(Clientes cliente) {
-        dataStore.replace(cliente.getId(), cliente);
+    public void updateCustomer(Clientes clientes) {
+        dataStore.replace(clientes.getId(), clientes);
     }
 
     @Override

@@ -55,6 +55,7 @@ public class Main {
         System.out.println("TELEFONO-" + sociedad.getTelefono());
 
 
+
         Producto producto1 = new Producto();
         producto1.setId(1);
         producto1.setName("llavero");
@@ -95,7 +96,7 @@ public class Main {
         List<Clientes> customers = getCustomerUseCase.execute();
 
         for (int i = 0; i < customers.size(); i++){
-            printClientes(customers.get(i));
+            printCliente(customers.get(i));
         }
 
         DeleteCustomerUseCase deleteCustomerUseCase = new DeleteCustomerUseCase(customerDataStore);
@@ -134,6 +135,8 @@ public class Main {
         System.out.println("TIPO IVA-" + servicio2.getIva());
 
 
+
+
         Factura factura1 = new Factura();
         factura1.setId(1);
         factura1.setFecha("20/2/22");
@@ -157,5 +160,14 @@ public class Main {
         ImpresionFacturas.print1(factura1);
 
         ImpresionFacturas.print2(factura2);
+
+
+
+    }
+
+
+
+    private static void printCliente(Clientes clientes) {
+        System.out.println("Cod: " + clientes.getId() + " Nombre: " + clientes.getName() + " Email: " + clientes.getEmail());
     }
 }

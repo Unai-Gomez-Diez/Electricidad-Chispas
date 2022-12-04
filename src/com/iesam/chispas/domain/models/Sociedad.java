@@ -16,7 +16,7 @@ public class Sociedad implements Clientes {
         this.id = id;
     }
     @Override
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 

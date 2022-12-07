@@ -34,7 +34,7 @@ public class Producto implements Vender {
         this.marca=marca;
     }
 
-    public String getModel(){
+    public String getModel(String s){
         return model;
     }
 

@@ -1,9 +1,6 @@
 package com.iesam.chispas.domain.models;
 
-import com.iesam.chispas.data.CustomerDataStore;
-import com.iesam.chispas.data.ItemDataStore;
-import com.iesam.chispas.data.MemCustomerDataStore;
-import com.iesam.chispas.data.MemItemDataStore;
+import com.iesam.chispas.data.*;
 import com.iesam.chispas.domain.usecase.*;
 
 import java.util.List;
@@ -74,14 +71,14 @@ public class Main {
         System.out.println("com.iesam.chispas.domain.models.Producto-" + producto1.getId());
         System.out.println("NOMBRE-" + producto1.getName());
         System.out.println("MARCA-" + producto1.getMarca());
-        System.out.println("MODELO-" + producto1.getModel());
+        System.out.println("MODELO-" + producto1.getModel("685425"));
         System.out.println("PRECIO-" + producto1.getPrecio());
         System.out.println("TIPO IVA-" + producto1.getIva());
         System.out.println("-------------------");
         System.out.println("com.iesam.chispas.domain.models.Producto-" + producto2.getId());
         System.out.println("NOMBRE-" + producto2.getName());
         System.out.println("MARCA-" + producto2.getMarca());
-        System.out.println("MODELO-" + producto2.getModel());
+        System.out.println("MODELO-" + producto2.getModel("685425"));
         System.out.println("PRECIO-" + producto2.getPrecio());
         System.out.println("TIPO IVA-" + producto2.getIva());
 
@@ -98,18 +95,24 @@ public class Main {
             printCliente(customers.get(i));
         }
 
+        System.out.println("----- Eliminado ------");
         DeleteCustomerUseCase deleteCustomerUseCase = new DeleteCustomerUseCase(customerDataStore);
         deleteCustomerUseCase.execute(sociedad);
-        for (int i = 0; i < customers.size(); i++){
-            printCliente(customers.get(i));
+        List<Clientes> customers2 = getCustomerUseCase.execute();
+        for (int i = 0; i < customers2.size(); i++){
+            printCliente(customers2.get(i));
         }
 
+        System.out.println("----- Modificando la Sociedad ------");
+        sociedad.setEmail("0000000000");
         UpdateCustomerUseCase updateCustomerUseCase = new UpdateCustomerUseCase(customerDataStore);
         updateCustomerUseCase.execute(sociedad);
-        for (int i = 0; i < customers.size(); i++){
-            printCliente(customers.get(i));
+        List<Clientes> customers3 = getCustomerUseCase.execute();
+        for (int i = 0; i < customers3.size(); i++){
+            printCliente(customers3.get(i));
         }
-/*
+
+        /*
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
  */
 
@@ -150,16 +153,21 @@ public class Main {
             printVender(item.get(i));
         }
 
+        System.out.println("----- Eliminado ------");
         DeleteItemUseCase deleteItemUseCase = new DeleteItemUseCase(itemDataStore);
         deleteItemUseCase.execute(producto1);
-        for (int i = 0; i < item.size(); i++){
-            printVender(item.get(i));
+        List<Vender> item2 = getItemUseCase.execute();
+        for (int i = 0; i < item2.size(); i++){
+            printVender(item2.get(i));
         }
 
+        System.out.println("----- Modificando el Producto ------");
+        producto1.getModel("685425");
         UpdateItemUseCase updateItemUseCase = new UpdateItemUseCase(itemDataStore);
         updateItemUseCase.execute(servicio1);
-        for (int i = 0; i < item.size(); i++){
-            printVender(item.get(i));
+        List<Vender> item3 = getItemUseCase.execute();
+        for (int i = 0; i < item3.size(); i++){
+            printVender(item3.get(i));
         }
 
 
@@ -191,12 +199,26 @@ public class Main {
 
     }
 
+    FactureDataStore factureDataStore= new MemFactureDataStore();
 
+    AddFactureUseCase addFactureUseCase = new AddFactureUseCase(factureDataStore);
+        addFactureUseCase.execute(factura1);
+        addFactureUseCase.execute(servicio1);
+
+    GetFactureUseCase getFactureUseCase = new GetFactureUseCase(factureDataStore);
+    List<Factura> item = getFactureUseCase.execute();
+
+        for (int i = 0; i < facture.size(); i++){
+        printFactura(factura.get(i));
+    }
 
     private static void printCliente(Clientes clientes) {
         System.out.println("Cod: " + clientes.getId() + " Nombre: " + clientes.getName() + " Email: " + clientes.getEmail());
     }
     private static void printVender(Vender vender) {
-        System.out.println("Cod: " + vender.getId() + " Nombre: " + vender.getName() + " Email: " + vender.getIva());
+        System.out.println("Cod: " + vender.getId() + " Nombre: " + vender.getName() + " Iva: " + vender.getIva());
+    }
+    private static void printFactura(Factura factura) {
+        System.out.println("Cod: " + factura.getId() + " Fecha: " + factura.getFecha()+ " Base imponible: " + factura.getBaseImponible());
     }
 }

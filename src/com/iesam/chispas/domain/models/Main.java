@@ -203,7 +203,7 @@ public class Main {
 
     AddFactureUseCase addFactureUseCase = new AddFactureUseCase(factureDataStore);
         addFactureUseCase.execute(factura1);
-        addFactureUseCase.execute(servicio1);
+
 
     GetFactureUseCase getFactureUseCase = new GetFactureUseCase(factureDataStore);
     List<Factura> item = getFactureUseCase.execute();
